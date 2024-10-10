@@ -3,8 +3,6 @@ package flower.store;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
 @Setter
 public class Flower {
     @Getter
@@ -15,7 +13,16 @@ public class Flower {
     @Getter
     private FlowerType flowerType;
 
+    public Flower(double sepalLength, FlowerColor color, double price, FlowerType flowerType){
+        this.sepalLength = sepalLength;
+        this.color = color;
+        this.price = price;
+        this.flowerType = flowerType;
+    }
+
     public String getColor() {
         return color.toString();
     }
+
+
 }
