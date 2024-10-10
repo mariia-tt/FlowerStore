@@ -23,6 +23,5 @@ public class Flower {
     public String getColor() {
         return color.toString();
     }
-
-
 }
+
