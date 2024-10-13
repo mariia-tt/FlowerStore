@@ -11,6 +11,7 @@ public class StoreTest {
     private static final double PRICE_ONE = 5.0;
     private static final double DISCOUNT_ONE = 1.5;
     private static final int QUANTITY_ONE = 10;
+    private static final int QUANTITY_FIVE = 5;
 
     private static final double PRICE_TWO = 6.0;
     private static final double DISCOUNT_TWO = 5.0; 
@@ -32,7 +33,7 @@ public class StoreTest {
         store.addFlowerPack(new FlowerPack(new Chamomile(PRICE_ONE,
          FlowerColor.YELLOW, DISCOUNT_ONE), QUANTITY_ONE));
         store.addFlowerPack(new FlowerPack(new Rose(PRICE_TWO,
-         FlowerColor.RED, DISCOUNT_TWO), 5));
+         FlowerColor.RED, DISCOUNT_TWO), QUANTITY_FIVE));
         store.addFlowerPack(new FlowerPack(new Tulip(PRICE_THREE,
          FlowerColor.BLUE, DISCOUNT_THREE), QUANTITY_TWO));
         store.addFlowerPack(new FlowerPack(new Chamomile(PRICE_FOUR,
@@ -41,8 +42,8 @@ public class StoreTest {
 
     @Test
     public void testStoreFunctionality() {
-        double total = (PRICE_ONE * QUANTITY_ONE) - DISCOUNT_ONE +
-         (PRICE_TWO * 2) - DISCOUNT_TWO;
+        double total = (PRICE_ONE * QUANTITY_ONE) - DISCOUNT_ONE
+         + (PRICE_TWO * 2) - DISCOUNT_TWO;
         Assertions.assertEquals(EXPECTED_TOTAL, total);
     }
 
