@@ -29,45 +29,55 @@ public class StoreTest {
     @BeforeEach
     public void setUp() {
         store = new Store();
-        store.addFlowerPack(new FlowerPack(new Chamomile(PRICE_ONE, FlowerColor.YELLOW, DISCOUNT_ONE), QUANTITY_ONE));
-        store.addFlowerPack(new FlowerPack(new Rose(PRICE_TWO, FlowerColor.RED, DISCOUNT_TWO), 5));
-        store.addFlowerPack(new FlowerPack(new Tulip(PRICE_THREE, FlowerColor.BLUE, DISCOUNT_THREE), QUANTITY_TWO));
-        store.addFlowerPack(new FlowerPack(new Chamomile(PRICE_FOUR, FlowerColor.WHITE, DISCOUNT_FOUR), QUANTITY_THREE));
+        store.addFlowerPack(new FlowerPack(new Chamomile(PRICE_ONE,
+         FlowerColor.YELLOW, DISCOUNT_ONE), QUANTITY_ONE));
+        store.addFlowerPack(new FlowerPack(new Rose(PRICE_TWO,
+         FlowerColor.RED, DISCOUNT_TWO), 5));
+        store.addFlowerPack(new FlowerPack(new Tulip(PRICE_THREE,
+         FlowerColor.BLUE, DISCOUNT_THREE), QUANTITY_TWO));
+        store.addFlowerPack(new FlowerPack(new Chamomile(PRICE_FOUR,
+         FlowerColor.WHITE, DISCOUNT_FOUR), QUANTITY_THREE));
     }
 
     @Test
     public void testStoreFunctionality() {
-        double total = (PRICE_ONE * QUANTITY_ONE) - DISCOUNT_ONE + (PRICE_TWO * 2) - DISCOUNT_TWO;
+        double total = (PRICE_ONE * QUANTITY_ONE) - DISCOUNT_ONE +
+         (PRICE_TWO * 2) - DISCOUNT_TWO;
         Assertions.assertEquals(EXPECTED_TOTAL, total);
     }
 
     @Test
     public void testSearchByType() {
-        List<FlowerPack> results = store.search(FlowerType.CHAMOMILE, null, null, null);
+        List<FlowerPack> results = store.search(FlowerType.CHAMOMILE,
+         null, null, null);
         Assertions.assertEquals(2, results.size());
     }
 
     @Test
     public void testSearchByColor() {
-        List<FlowerPack> results = store.search(null, FlowerColor.RED, null, null);
+        List<FlowerPack> results = store.search(null,
+         FlowerColor.RED, null, null);
         Assertions.assertEquals(1, results.size());
     }
 
     @Test
     public void testSearchByPriceRange() {
-        List<FlowerPack> results = store.search(null, null, TEST_DISCOUNT, 2.0);
+        List<FlowerPack> results = store.search(null,
+         null, TEST_DISCOUNT, 2.0);
         Assertions.assertEquals(2, results.size());
     }
 
     @Test
     public void testSearchByAllCriteria() {
-        List<FlowerPack> results = store.search(FlowerType.ROSE, FlowerColor.RED, TEST_DISCOUNT, TEST_PRICE_LIMIT);
+        List<FlowerPack> results = store.search(FlowerType.ROSE,
+         FlowerColor.RED, TEST_DISCOUNT, TEST_PRICE_LIMIT);
         Assertions.assertEquals(1, results.size());
     }
 
     @Test
     public void testSearchNoResults() {
-        List<FlowerPack> results = store.search(FlowerType.TULIP, FlowerColor.WHITE, null, null);
+        List<FlowerPack> results = store.search(FlowerType.TULIP,
+         FlowerColor.WHITE, null, null);
         Assertions.assertEquals(0, results.size());
     }
 }
