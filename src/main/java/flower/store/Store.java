@@ -15,12 +15,17 @@ public class Store {
         flowers.add(flowerPack);
     }
 
-    public List<FlowerPack> search(FlowerType type, FlowerColor color, Double minPrice, Double maxPrice) {
+    public List<FlowerPack> search(FlowerType type, FlowerColor color,
+     Double minPrice, Double maxPrice) {
         return flowers.stream()
-                .filter(pack -> (type == null || pack.getFlower().getFlowerType() == type) &&
-                                (color == null || pack.getFlower().getColor().equals(color.toString())) &&
-                                (minPrice == null || pack.getPrice() >= minPrice) &&
-                                (maxPrice == null || pack.getPrice() <= maxPrice))
+                .filter(pack -> (type == null
+                 || pack.getFlower().getFlowerType() == type) &&
+                                (color == null
+                                 || pack.getFlower().getColor().equals(color.toString())) &&
+                                (minPrice == null
+                                 || pack.getPrice() >= minPrice) &&
+                                (maxPrice == null
+                                 || pack.getPrice() <= maxPrice))
                 .collect(Collectors.toList());
     }
 }

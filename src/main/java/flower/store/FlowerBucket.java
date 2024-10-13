@@ -13,7 +13,7 @@ public class FlowerBucket {
         this.flowerBucket_list.add(flowerPack);
     }
 
-    public FlowerBucket (ArrayList<FlowerPack> FlowerBucket_list) {
+    public FlowerBucket(ArrayList<FlowerPack> FlowerBucket_list) {
         this.flowerBucket_list = FlowerBucket_list;
     }
 
