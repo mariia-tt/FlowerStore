@@ -14,7 +14,11 @@ public class FlowerTest {
 
     @BeforeEach
     public void init() {
-        flower = new Flower();
+        double price = RANDOM_GENERATOR.nextDouble() * MAX_PRICE;
+        FlowerColor color = FlowerColor.RED;
+        double sepalLength = 5.5;
+        FlowerType type = FlowerType.ROSE;
+        flower = new Flower(price, color, sepalLength, type);
     }
 
     @Test
