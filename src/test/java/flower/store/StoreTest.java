@@ -2,10 +2,9 @@ package flower.store;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StoreTest {
 
@@ -39,36 +38,36 @@ public class StoreTest {
     @Test
     public void testStoreFunctionality() {
         double total = (PRICE_ONE * QUANTITY_ONE) - DISCOUNT_ONE + (PRICE_TWO * 2) - DISCOUNT_TWO;
-        assertEquals(EXPECTED_TOTAL, total);
+        Assertions.assertEquals(EXPECTED_TOTAL, total);
     }
 
     @Test
     public void testSearchByType() {
         List<FlowerPack> results = store.search(FlowerType.CHAMOMILE, null, null, null);
-        assertEquals(2, results.size());
+        Assertions.assertEquals(2, results.size());
     }
 
     @Test
     public void testSearchByColor() {
         List<FlowerPack> results = store.search(null, FlowerColor.RED, null, null);
-        assertEquals(1, results.size());
+        Assertions.assertEquals(1, results.size());
     }
 
     @Test
     public void testSearchByPriceRange() {
-        List<FlowerPack> results = store.search(null, null, TEST_DISCOUNT, 2.0); // Using TEST_DISCOUNT instead of magic number
-        assertEquals(2, results.size());
+        List<FlowerPack> results = store.search(null, null, TEST_DISCOUNT, 2.0);
+        Assertions.assertEquals(2, results.size());
     }
 
     @Test
     public void testSearchByAllCriteria() {
-        List<FlowerPack> results = store.search(FlowerType.ROSE, FlowerColor.RED, TEST_DISCOUNT, TEST_PRICE_LIMIT); // Using constants
-        assertEquals(1, results.size());
+        List<FlowerPack> results = store.search(FlowerType.ROSE, FlowerColor.RED, TEST_DISCOUNT, TEST_PRICE_LIMIT);
+        Assertions.assertEquals(1, results.size());
     }
 
     @Test
     public void testSearchNoResults() {
         List<FlowerPack> results = store.search(FlowerType.TULIP, FlowerColor.WHITE, null, null);
-        assertEquals(0, results.size());
+        Assertions.assertEquals(0, results.size());
     }
 }
