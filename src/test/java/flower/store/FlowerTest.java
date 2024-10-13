@@ -14,7 +14,7 @@ public class FlowerTest {
 
     @BeforeEach
     public void init() {
-        flower = new Flower();
+        flower = new Flower(5.0, FlowerColor.RED, RANDOM_GENERATOR.nextInt(MAX_PRICE), FlowerType.ROSE);
     }
 
     @Test
