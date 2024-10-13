@@ -1,5 +1,6 @@
 package flower.store;
 
+//Propose an approach to represent flower color (enum class). 
 public enum FlowerColor {
     RED("#FF0000"), BLUE("#0000FF"),
      WHITE("#000000"), YELLOW("#FFFF00"),
