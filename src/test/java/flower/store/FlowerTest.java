@@ -10,13 +10,14 @@ import org.junit.jupiter.api.Assertions;
 public class FlowerTest {
     private static final Random RANDOM_GENERATOR = new Random();
     private static final int MAX_PRICE = 100;
+    private static final double DEFAULT_SEPAL_LENGTH = 5.5;
     private Flower flower;
 
     @BeforeEach
     public void init() {
         double price = RANDOM_GENERATOR.nextDouble() * MAX_PRICE;
         FlowerColor color = FlowerColor.RED;
-        double sepalLength = 5.5;
+        double sepalLength = DEFAULT_SEPAL_LENGTH;
         FlowerType type = FlowerType.ROSE;
         flower = new Flower(price, color, sepalLength, type);
     }
