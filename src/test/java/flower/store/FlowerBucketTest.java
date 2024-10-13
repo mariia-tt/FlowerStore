@@ -11,6 +11,7 @@ public class FlowerBucketTest {
     private static final int MAX_QUANTITY = 1000;
     private static final int MAX_PRICE = 100;
     private static final int TEST_PRICE = 10;
+    private static final double STEM_LENGHT = 10;
 
     private FlowerBucket flowerBucket;
 
@@ -25,7 +26,7 @@ public class FlowerBucketTest {
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
         double flowerPrice = TEST_PRICE;
         FlowerColor color = FlowerColor.RED;
-        double stemLength = 30.0;
+        double stemLength = STEM_LENGHT;
         FlowerType type = FlowerType.ROSE;
         Flower flower = new Flower(flowerPrice, color, stemLength, type);
         FlowerPack flowerPack = new FlowerPack(flower, quantity);
