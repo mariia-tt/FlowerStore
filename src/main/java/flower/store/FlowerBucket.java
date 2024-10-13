@@ -1,27 +1,27 @@
 package flower.store;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 
 public class FlowerBucket {
-    private ArrayList<FlowerPack> flowerBucket_list;
+    private ArrayList<FlowerPack> flowerBucketList;
 
     public FlowerBucket() {
-        this.flowerBucket_list = new ArrayList<>();
+        this.flowerBucketList = new ArrayList<>();
+    }
+
+    public FlowerBucket(ArrayList<FlowerPack> flowerBucketList) {
+        this.flowerBucketList = flowerBucketList;
     }
 
     public void add(FlowerPack flowerPack) {
-        this.flowerBucket_list.add(flowerPack);
-    }
-
-    public FlowerBucket(ArrayList<FlowerPack> FlowerBucket_list) {
-        this.flowerBucket_list = FlowerBucket_list;
+        this.flowerBucketList.add(flowerPack);
     }
 
     public double getPrice() {
         double sum = 0;
-        int l = flowerBucket_list.size();
+        int l = flowerBucketList.size();
         for (int i = 0; i < l; i++) {
-            FlowerPack pack = flowerBucket_list.get(i);
+            FlowerPack pack = flowerBucketList.get(i);
             sum += pack.getPrice();
         }
         return sum;

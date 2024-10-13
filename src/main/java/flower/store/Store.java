@@ -19,13 +19,10 @@ public class Store {
      Double minPrice, Double maxPrice) {
         return flowers.stream()
                 .filter(pack -> (type == null
-                 || pack.getFlower().getFlowerType() == type) &&
-                                (color == null
-                                 || pack.getFlower().getColor().equals(color.toString())) &&
-                                (minPrice == null
-                                 || pack.getPrice() >= minPrice) &&
-                                (maxPrice == null
-                                 || pack.getPrice() <= maxPrice))
+ || pack.getFlower().getFlowerType() == type) && (color == null
+  || pack.getFlower().getColor().equals(color.toString())) && (minPrice
+   == null || pack.getPrice() >= minPrice) && (maxPrice == null
+    || pack.getPrice() <= maxPrice))
                 .collect(Collectors.toList());
     }
 }
