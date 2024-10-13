@@ -16,4 +16,3 @@ public enum FlowerColor {
         return stringRepresentation;
     }
 }
-
