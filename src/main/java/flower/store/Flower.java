@@ -26,11 +26,19 @@ public class Flower {
         this.price = price;
     }
 
+    public void setColor(FlowerColor color){
+        this.color = color;
+    }
+
     public Double getPrice() {
         return price;
     }
 
-    public String getColor() {
-        return color.toString();
+    public FlowerType getFlowerType() {
+        return this.flowerType;
+    }
+
+    public FlowerColor getColor() {
+        return this.color;
     }
 }

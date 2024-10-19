@@ -16,4 +16,12 @@ public class FlowerPack {
     public Double getPrice() {
         return this.flower.getPrice() * this.quantity;
     }
+
+    public FlowerColor getColor() {
+        return this.flower.getColor();
+    }
+
+    public Flower getFlower() {
+        return this.flower;
+    }
 }
