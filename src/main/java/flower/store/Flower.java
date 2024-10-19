@@ -12,13 +12,11 @@ public class Flower {
     @Getter
     private FlowerType flowerType;
 
-    
-
-    public Flower(double sepalLength, FlowerColor flowerColor,
-     double flowerPrice, FlowerType flowerType) {
+    public Flower(double sepalLength, FlowerColor color,
+     double price, FlowerType flowerType) {
         this.sepalLength = sepalLength;
-        this.color = flowerColor;
-        this.price = flowerPrice;
+        this.color = color;
+        this.price = price;
         this.flowerType = flowerType;
     }
 
