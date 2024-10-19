@@ -26,4 +26,8 @@ public class FlowerBucket {
         }
         return sum;
     }
+
+    public ArrayList<FlowerPack> getFlowerPacks() {
+        return this.flowerBucketList;
+    }
 }
