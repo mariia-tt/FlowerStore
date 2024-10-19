@@ -20,12 +20,12 @@ public class Flower {
         this.flowerType = flowerType;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrice(double newprice) {
+        this.price = newprice;
     }
 
-    public void setColor(FlowerColor color) {
-        this.color = color;
+    public void setColor(FlowerColor newcolor) {
+        this.color = newcolor;
     }
 
     public Double getPrice() {
