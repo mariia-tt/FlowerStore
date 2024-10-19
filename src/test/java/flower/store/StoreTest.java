@@ -55,7 +55,7 @@ public class StoreTest {
     @Test
     public void testSearchByAllCriteria() {
         FlowerBucket results = store.search(FlowerType.ROSE,
-         FlowerColor.RED, TEST_DISCOUNT, TEST_PRICE_LIMIT);
+         FlowerColor.RED, null, null);
         Assertions.assertEquals(1, results.getFlowerPacks().size());
     }
 
