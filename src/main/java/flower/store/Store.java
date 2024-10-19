@@ -1,9 +1,5 @@
 package flower.store;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class Store {
     private FlowerBucket flowers;
 
@@ -15,11 +11,13 @@ public class Store {
         flowers.add(flowerPack);
     }
 
-    public FlowerBucket search(FlowerType type, FlowerColor color, Double minPrice,
+    public FlowerBucket search(FlowerType type, FlowerColor color,
+     Double minPrice,
      Double maxPrice) {
         FlowerBucket result =  new FlowerBucket();
         for (FlowerPack packet : flowers.getFlowerPacks()) {
-            if(matchesType(packet, type) && matchesColor(packet, color) && matchesPrice(packet, minPrice, maxPrice)) {
+            if (matchesType(packet, type) && matchesColor(packet,
+             color) && matchesPrice(packet, minPrice, maxPrice)) {
                 result.add(packet);
             }
         }
@@ -34,9 +32,10 @@ public class Store {
         return color == null || pack.getFlower().getColor() == color;
     }
     
-    private boolean matchesPrice(FlowerPack pack, Double minPrice, Double maxPrice) {
-        return (minPrice == null || pack.getPrice() >= minPrice) &&
-               (maxPrice == null || pack.getPrice() <= maxPrice);
+    private boolean matchesPrice(FlowerPack pack, Double minPrice,
+     Double maxPrice) {
+        return (minPrice == null || pack.getPrice() >= minPrice)
+         && (maxPrice == null || pack.getPrice() <= maxPrice);
     }
     
 }

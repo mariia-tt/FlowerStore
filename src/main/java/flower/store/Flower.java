@@ -14,11 +14,11 @@ public class Flower {
 
     
 
-    public Flower(double sepalLength, FlowerColor color, double price,
-     FlowerType flowerType) {
+    public Flower(double sepalLength, FlowerColor flowerColor,
+     double flowerPrice, FlowerType flowerType) {
         this.sepalLength = sepalLength;
-        this.color = color;
-        this.price = price;
+        this.color = flowerColor;
+        this.price = flowerPrice;
         this.flowerType = flowerType;
     }
 
@@ -26,7 +26,7 @@ public class Flower {
         this.price = price;
     }
 
-    public void setColor(FlowerColor color){
+    public void setColor(FlowerColor color) {
         this.color = color;
     }
 
