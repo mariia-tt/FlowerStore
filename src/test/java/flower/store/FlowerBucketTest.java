@@ -24,7 +24,7 @@ public class FlowerBucketTest {
     public void testPrice() {
         int price = RANDOM_GENERATOR.nextInt(MAX_PRICE);
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        double sepalLength = RANDOM_GENERATOR.nextDouble(MAX_SEPAL_LENGTH);
+        double sepalLength = (MAX_SEPAL_LENGTH);
         FlowerType type = FlowerType.ROSE;
 
         Flower flower = new Flower(sepalLength, FlowerColor.RED, price, type);
